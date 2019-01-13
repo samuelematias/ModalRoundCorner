@@ -139,9 +139,9 @@ class HomeScreen extends Component {
 						open={openModal}
 						onPressOutside={() => this._handleCloseModal()}
 						modalContent={() => this._renderModalContent()}
-						showButtonOnOverlay
-						// showButtonOnModal
-						// roundCorner={10}
+						showButtonOnOverlay //Facebook Modal Style
+						// showButtonOnModal //LinkedIn Modal style
+						// roundCorner={10} //LinkedIn Modal style
 					/>
 				}
 			</ImageBackground>
