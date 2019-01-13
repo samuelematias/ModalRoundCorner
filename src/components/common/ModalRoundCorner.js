@@ -23,34 +23,11 @@ class ModalRoundCorner extends Component {
 						style={[styles.bottomOverlay, overlayStyle]}
 						onPress={() => onPressOutside()}
 					>
-						<View
-							style={{
-								alignItems: 'center',
-								justifyContent: 'flex-end',
-								flex: 1,
-								marginBottom: 5
-							}}
-						>
-							<View
-								style={{
-									width: 40,
-									height: 6,
-									backgroundColor: '#fafbfb',
-									borderRadius: 5
-								}}
-							/>
+						<View style={styles.wrapperOverlay}>
+							<View style={styles.buttonOnOverlay} />
 						</View>
 					</TouchableOpacity>
-					<View
-						style={{
-							flex: 1,
-							backgroundColor: '#ffffff',
-							borderTopLeftRadius: 6,
-							borderTopRightRadius: 6
-						}}
-					>
-						{modalContent()}
-					</View>
+					<View style={styles.wrapperContent}>{modalContent()}</View>
 				</View>
 			</Modal>
 		);

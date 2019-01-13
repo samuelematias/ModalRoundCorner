@@ -86,5 +86,23 @@ export default StyleSheet.create({
 			Platform.OS === 'ios'
 				? Metrics.screenHeight - 225
 				: Metrics.screenHeight - 240
+	},
+	wrapperOverlay: {
+		alignItems: 'center',
+		justifyContent: 'flex-end',
+		flex: 1,
+		marginBottom: 5
+	},
+	buttonOnOverlay: {
+		width: 40,
+		height: 6,
+		backgroundColor: '#fafbfb',
+		borderRadius: 5
+	},
+	wrapperContent: {
+		flex: 1,
+		backgroundColor: '#ffffff',
+		borderTopLeftRadius: 6,
+		borderTopRightRadius: 6
 	}
 });
