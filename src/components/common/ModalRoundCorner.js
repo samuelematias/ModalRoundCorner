@@ -12,6 +12,13 @@ class ModalRoundCorner extends Component {
 		this.state = {};
 	}
 
+	/**
+	 * render the modal
+	 * @author samuelmataraso
+	 * @method renderSeparator
+	 * @param none
+	 * @return {func} render
+	 */
 	_renderModal = () => {
 		const {
 			open,

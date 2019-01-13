@@ -78,7 +78,7 @@ class HomeScreen extends Component {
 	};
 
 	/**
-	 * render separator between Years
+	 * render separator between Items
 	 * @author samuelmataraso
 	 * @method renderSeparator
 	 * @param none
@@ -92,6 +92,13 @@ class HomeScreen extends Component {
 		);
 	};
 
+	/**
+	 * render the flatlist item
+	 * @author samuelmataraso
+	 * @method renderSeparator
+	 * @param object item
+	 * @return {func} render
+	 */
 	_renderItem = item => {
 		return (
 			<View style={styles.containerItem}>
@@ -112,6 +119,13 @@ class HomeScreen extends Component {
 		);
 	};
 
+	/**
+	 * render the flatlist
+	 * @author samuelmataraso
+	 * @method renderSeparator
+	 * @param none
+	 * @return {func} render
+	 */
 	_renderModalContent = () => {
 		const { dataModal } = this.state;
 		return (
