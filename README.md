@@ -21,7 +21,7 @@
 
 ## About this app
 
-On this app was developed a <b>Bottom modal with rounded border corner</b>, like the modal on mobile app of Facebook and LinkedIn.
+On this app was developed a <b>Bottom modal with rounded border corner</b>, like the modal on <b>Mobile app</b> of <b>Facebook</b> and <b>LinkedIn</b>.<br/>
 The model was developed as a component, so it can be customized by props.
 
 <br/>
