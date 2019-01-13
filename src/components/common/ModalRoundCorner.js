@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, TouchableOpacity, ScrollView, Modal, Text } from 'react-native';
+import { View, TouchableOpacity, Modal, Text } from 'react-native';
 import PropTypes from 'prop-types';
 
 //styles
@@ -13,7 +13,19 @@ class ModalRoundCorner extends Component {
 	}
 
 	_renderModal = () => {
-		const { open, onPressOutside, modalContent, overlayStyle } = this.props;
+		const {
+			open,
+			onPressOutside,
+			modalContent,
+			overlayStyle,
+			showButtonOnOverlay,
+			showButtonOnModal,
+			buttonOnOverlayStyle,
+			buttonOnModalStyle,
+			roundCorner,
+			contentModalStyle,
+			contentOverlayStyle
+		} = this.props;
 		const {} = this.state;
 
 		return (
@@ -23,11 +35,33 @@ class ModalRoundCorner extends Component {
 						style={[styles.bottomOverlay, overlayStyle]}
 						onPress={() => onPressOutside()}
 					>
-						<View style={styles.wrapperOverlay}>
-							<View style={styles.buttonOnOverlay} />
+						<View style={[styles.wrapperOverlay, contentOverlayStyle]}>
+							{showButtonOnOverlay && (
+								<View style={[styles.buttonOnOverlay, buttonOnOverlayStyle]} />
+							)}
 						</View>
 					</TouchableOpacity>
-					<View style={styles.wrapperContent}>{modalContent()}</View>
+					<View
+						style={[
+							styles.wrapperContent,
+							contentModalStyle,
+							{
+								borderTopLeftRadius: roundCorner,
+								borderTopRightRadius: roundCorner
+							}
+						]}
+					>
+						{showButtonOnModal && (
+							<TouchableOpacity
+								style={styles.wrapperButtonOnModal}
+								onPress={() => onPressOutside()}
+								activeOpacity={1}
+							>
+								<View style={[styles.buttonOnModal, buttonOnModalStyle]} />
+							</TouchableOpacity>
+						)}
+						{modalContent()}
+					</View>
 				</View>
 			</Modal>
 		);
@@ -53,7 +87,14 @@ ModalRoundCorner.defaultProps = {
 	onValidSubmit: () => {},
 	onPressCancel: () => {},
 	modalContent: () => {},
-	overlayStyle: styles.bottomOverlay
+	overlayStyle: styles.bottomOverlay,
+	showButtonOnOverlay: false,
+	showButtonOnModal: false,
+	buttonOnOverlayStyle: styles.buttonOnOverlay,
+	buttonOnModalStyle: styles.buttonOnModal,
+	roundCorner: 6,
+	contentModalStyle: styles.wrapperContent,
+	contentOverlayStyle: styles.wrapperOverlay
 };
 
 ModalRoundCorner.propTypes = {
@@ -82,6 +123,29 @@ ModalRoundCorner.propTypes = {
 	onValidSubmit: PropTypes.func,
 	onPressCancel: PropTypes.func,
 	overlayStyle: PropTypes.oneOfType([
+		PropTypes.object,
+		PropTypes.number,
+		PropTypes.array
+	]),
+	showButtonOnOverlay: PropTypes.bool,
+	showButtonOnModal: PropTypes.bool,
+	buttonOnOverlayStyle: PropTypes.oneOfType([
+		PropTypes.object,
+		PropTypes.number,
+		PropTypes.array
+	]),
+	buttonOnModalStyle: PropTypes.oneOfType([
+		PropTypes.object,
+		PropTypes.number,
+		PropTypes.array
+	]),
+	roundCorner: PropTypes.number,
+	contentModalStyle: PropTypes.oneOfType([
+		PropTypes.object,
+		PropTypes.number,
+		PropTypes.array
+	]),
+	contentOverlayStyle: PropTypes.oneOfType([
 		PropTypes.object,
 		PropTypes.number,
 		PropTypes.array

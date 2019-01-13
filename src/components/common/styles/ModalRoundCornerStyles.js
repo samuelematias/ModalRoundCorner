@@ -99,10 +99,22 @@ export default StyleSheet.create({
 		backgroundColor: '#fafbfb',
 		borderRadius: 5
 	},
+	buttonOnModal: {
+		width: 80,
+		height: 3,
+		backgroundColor: '#dde8ea',
+		borderRadius: 5
+	},
 	wrapperContent: {
 		flex: 1,
 		backgroundColor: '#ffffff',
 		borderTopLeftRadius: 6,
 		borderTopRightRadius: 6
+	},
+	wrapperButtonOnModal: {
+		justifyContent: 'center',
+		alignSelf: 'center',
+		marginTop: 10,
+		marginBottom: 10
 	}
 });
