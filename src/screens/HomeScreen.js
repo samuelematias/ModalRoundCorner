@@ -134,6 +134,7 @@ class HomeScreen extends Component {
 				renderItem={({ item }) => this._renderItem(item)}
 				keyExtractor={item => item.id.toString()}
 				ItemSeparatorComponent={() => this._renderSeparator()}
+				showsVerticalScrollIndicator={false}
 			/>
 		);
 	};

@@ -36,7 +36,12 @@ class ModalRoundCorner extends Component {
 		const {} = this.state;
 
 		return (
-			<Modal animationType="slide" transparent={true} visible={open}>
+			<Modal
+				animationType="slide"
+				transparent={true}
+				visible={open}
+				onRequestClose={() => {}}
+			>
 				<View style={styles.containerBottomModal}>
 					<TouchableOpacity
 						style={[styles.bottomOverlay, overlayStyle]}
