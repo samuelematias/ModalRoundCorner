@@ -26,6 +26,12 @@ The model was developed as a component, so it can be customized by props.
 
 <br/>
 
+## Tech Stack
+
+- [React Native](https://github.com/facebook/react-native)
+
+<br/>
+
 ### Running it locally
 
 - `git clone https://github.com/samuelmataraso/ModalRoundCorner.git`
