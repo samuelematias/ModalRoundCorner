@@ -94,19 +94,10 @@ class HomeScreen extends Component {
 
 	_renderItem = item => {
 		return (
-			<View
-				style={{
-					margin: 10
-				}}
-			>
-				<View
-					style={{
-						flexDirection: 'row',
-						alignItems: 'flex-start'
-					}}
-				>
+			<View style={styles.containerItem}>
+				<View style={styles.wrapperItem}>
 					<View style={{ paddingRight: 10 }}>
-						<Image source={item.icon} style={{ width: 20, height: 20 }} />
+						<Image source={item.icon} style={styles.iconStyle} />
 					</View>
 					<View
 						style={{
@@ -138,33 +129,10 @@ class HomeScreen extends Component {
 		return (
 			<ImageBackground source={Images.screenFb} style={styles.container}>
 				<TouchableOpacity
-					style={{
-						width: 142,
-						height: 42,
-						borderRadius: 21,
-						backgroundColor: '#6c40be',
-						shadowColor: '#000',
-						shadowOffset: {
-							width: 0,
-							height: 2
-						},
-						shadowOpacity: 0.2,
-						elevation: 2,
-						alignItems: 'center',
-						justifyContent: 'center'
-					}}
+					style={styles.buttonOpenModal}
 					onPress={() => this._handleOpenModal()}
 				>
-					<Text
-						style={{
-							fontSize: 12,
-							fontWeight: '400',
-							color: '#ffffff',
-							alignSelf: 'center'
-						}}
-					>
-						{'Open Modal'}
-					</Text>
+					<Text style={styles.labelStyle}>{'Open Modal'}</Text>
 				</TouchableOpacity>
 				{
 					<ModalRoundCorner

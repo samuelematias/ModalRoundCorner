@@ -23,5 +23,37 @@ export default StyleSheet.create({
 	},
 	containerLine: {
 		marginTop: 10
+	},
+	containerItem: {
+		margin: 10
+	},
+	wrapperItem: {
+		flexDirection: 'row',
+		alignItems: 'flex-start'
+	},
+	iconStyle: {
+		width: 20,
+		height: 20
+	},
+	buttonOpenModal: {
+		width: 142,
+		height: 42,
+		borderRadius: 21,
+		backgroundColor: '#6c40be',
+		shadowColor: '#000',
+		shadowOffset: {
+			width: 0,
+			height: 2
+		},
+		shadowOpacity: 0.2,
+		elevation: 2,
+		alignItems: 'center',
+		justifyContent: 'center'
+	},
+	labelStyle: {
+		fontSize: 12,
+		fontWeight: '400',
+		color: '#ffffff',
+		alignSelf: 'center'
 	}
 });
